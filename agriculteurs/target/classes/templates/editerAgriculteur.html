@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Agriculteurs</title>
+</head>
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+<div class="card-header">
+Modifier des Agriculteurs
+</div>
+<div class="card-body">
+<form th:action="@{saveAgriculteur}" method="post">
+<div class="form-group">
+<label class="control-label" hidden>ID Agriculteur :</label>
+<input type="hidden" name="idAgriculteur" class="form-control" th:value="${agriculteur.idAgriculteur}" />
+</div>
+<div class="form-group">
+<label class="control-label">Nom Agriculteur :</label>
+<input type="text" name="nomAgriculteur" class="form-control" th:value="${agriculteur.nomAgriculteur}" />
+<span th:errors= ${agriculteur.nomAgriculteur} class="text-danger"> </span>
+</div>
+<div class="form-group">
+<label class="control-label">Salaire Agriculteur :</label>
+<input type="text" name="salaireAgriculteur" class="form-control" th:value="${agriculteur.salaireAgriculteur}" />
+<span th:errors=${agriculteur.salaireAgriculteur} class="text-danger"> </span>
+</div>
+<div class="form-group">
+<label class="control-label">date embauche :</label>
+<input type="date" name="dateEmbauche" class="form-control" th:value="${agriculteur.dateEmbauche}"/>
+<span th:errors=${agriculteur.dateEmbauche} class="text-danger"> </span>
+</div>
+<div class="form-group">
+<label class="control-label">Nom Ferme :</label>
+<input type="text" name="nomF" class="form-control" th:value="${agriculteur.nomF}" />
+<span th:errors= ${agriculteur.nomF} class="text-danger"> </span>
+</div>
+<div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Fermes</title>
+</head>
+<body>
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+<div class="card">
+<div class="card-header">
+Modifier des Fermes
+</div>
+<div class="card-body">
+<form th:action="@{saveFerme}" method="post">
+<div class="form-group">
+<label class="control-label" hidden>ID Ferme :</label>
+<input type="hidden" name="idFer" class="form-control" th:value="${ferme.idFer}" />
+</div>
+<div class="form-group">
+<label class="control-label">Nom Ferme :</label>
+<input type="text" name="nomFer" class="form-control" th:value="${ferme.nomFer}" />
+<span th:errors= ${ferme.nomFer} class="text-danger"> </span>
+</div>
+<div class="form-group">
+<label class="control-label">Description Ferme :</label>
+<input type="text" name="descriptionFer" class="form-control" th:value="${ferme.descriptionFer}" />
+<span th:errors=${ferme.descriptionFer} class="text-danger"> </span>
+</div>
+
+<div>
+<button type="submit" class="btn btn-primary">Valider</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

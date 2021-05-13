@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="template">
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
+<head>
+<meta charset="utf-8">
+<title>Ajout des Agriculteurs</title>
+</head>
+
+<body>
+
+<div layout:fragment="Mycontent">
+<div class="container mt-5">
+
+<center><h1>Nouveau Agriculteur </h1></center>
+<center>
+<div class="card-body">
+<form th:action="@{saveAgriculteur}" method="post">
+<div class="form-group">
+<label class="control-label">Nom Agriculteur :</label>
+<input type="text"  style="width:250px;" name="nomAgriculteur" class="form-control" />
+</div>
+<div class="form-group">
+<label class="control-label">Salaire Agriculteur :</label>
+<input type="text"  style="width:200px; " name="salaireAgriculteur" class="form-control" />
+</div>
+<div class="form-group">
+<label class="control-label">Date embauche :</label>
+<input type="date"  style="width:200px;" name="dateEmbauche" class="form-control" />
+</div>
+<div class="form-group">
+<label class="control-label"> Nom Ferme :</label>
+<input type="text"  style="width:200px;" name="nomF" class="form-control" />
+</div>
+<div>
+<br>
+<button type="submit" class="btn btn-success">Ajouter</button>
+</div>
+</form>
+</div></center>
+</div>
+</div>
+</div>
+</body>
+</html>
